@@ -10,14 +10,11 @@ from app.core.config import settings
 from app.models.user import User
 from app.models.user_profile import UserProfile
 from app.models.calculation import Calculation
-
-def hash_password(password: str) -> str:
-    s = bcrypt.gensalt()
-    h = bcrypt.hashpw(password.encode('utf-8'), s)
-    return h.decode('utf-8')
+from app.core.security import get_password_hash
 
 def create_demo_user():
-    engine = create_engine(settings.sync_database_url.replace("+asyncpg", ""))
+    # engine = create_engine(settings.sync_database_url.replace("+asyncpg", ""))
+    engine = create_engine(settings.sync_database_url)
     session = Session(engine)
 
     try:
@@ -35,7 +32,7 @@ def create_demo_user():
         password = "demo123"
         user = User(
             email=email,
-            password_hash=hash_password(password),
+            password_hash=get_password_hash(password),
         )
         session.add(user)
         session.flush()  # Генерируем ID в БД
