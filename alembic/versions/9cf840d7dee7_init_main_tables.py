@@ -74,6 +74,7 @@ def upgrade() -> None:
         sa.Column("gender", sa.String(length=6), nullable=False),
         sa.Column("birth_date", sa.Date()),
         sa.Column("height_cm", sa.Integer()),
+        sa.Column("weight_kg", sa.Integer()),
         sa.Column(
             "activity_level_id",
             sa.SmallInteger(),
