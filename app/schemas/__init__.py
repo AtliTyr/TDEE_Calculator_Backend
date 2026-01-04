@@ -10,7 +10,10 @@ from app.schemas.activity_level import (
     ActivityLevelBase, ActivityLevelCreate,
     ActivityLevelResponse, ActivityLevelUpdate
 )
-
+from app.schemas.calculation import (
+    CalculationBase, CalculationCreate, 
+    CalculationResponse, CalculationHistoryResponse, CalculationStatsResponse
+)
 __all__ = [
     # User schemas
     "UserBase", "UserRegister", "UserLogin", 
@@ -24,4 +27,9 @@ __all__ = [
     # Activity level schemas
     "ActivityLevelBase", "ActivityLevelCreate",
     "ActivityLevelResponse", "ActivityLevelUpdate",
+
+    # Calculation schemas
+    "CalculationBase", "CalculationCreate", 
+    "CalculationResponse", "CalculationHistoryResponse", 
+    "CalculationStatsResponse"
 ]

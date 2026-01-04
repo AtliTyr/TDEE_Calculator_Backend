@@ -21,7 +21,7 @@ class Calculation(Base):
         ForeignKey("users.id", ondelete="CASCADE"),
     )
     goal_id: Mapped[int] = mapped_column(SmallInteger)
-    formula_used: Mapped[str]
+    # formula_used: Mapped[str]
     input_data: Mapped[dict] = mapped_column(JSONB)
     results: Mapped[dict] = mapped_column(JSONB)
     created_at: Mapped[datetime] = mapped_column(default=datetime.utcnow)

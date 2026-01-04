@@ -115,7 +115,7 @@ def upgrade() -> None:
             sa.ForeignKey("goals.id"),
             nullable=False,
         ),
-        sa.Column("formula_used", sa.String(), nullable=False),
+        # sa.Column("formula_used", sa.String(), nullable=False),
         sa.Column("input_data", JSONB, nullable=False),
         sa.Column("results", JSONB, nullable=False),
         sa.Column(
