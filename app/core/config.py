@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     # JWT and Security settings
     SECRET_KEY: str = "your-super-secret-key-change-this-in-production"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    REFRESH_TOKEN_EXPIRE_DAYS: int = 30  # Добавляем настройку для refresh token
     ALGORITHM: str = "HS256"
 
     # CORS settings
